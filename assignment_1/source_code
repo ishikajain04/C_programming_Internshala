@@ -1,1 +1,65 @@
-
+#include<stdio.h>
+#include<stdlib.h>
+#include<unistd.h>
+int main()
+{
+	setbuf(stdout,NULL);
+	char name[20];
+	int standard,maths,eng,hin,snc,ssc,totalMarks;
+	char section , grade;
+	printf("-----------------------------------------------\n");
+	puts("              Jawahar Navodaya Vidhalaya         \n");
+	puts("                 Annual Report Card              \n\n");
+	
+	usleep(2000000);
+	printf("Name :");
+	scanf("%[^\n]%*c",name);
+	printf("Standard :");
+	scanf("%d",&standard);
+	while ((getchar()) != '\n');
+	printf("Section :");
+	scanf("%c",&section);
+	printf("\n");
+	
+	puts("Marks Secured out of 100\n\n");
+	usleep(1000000);
+	printf("Mathematics : ");
+	scanf("%d",&maths);
+	printf("English : ");
+	scanf("%d",&eng);
+	printf("Hindi : ");
+	scanf("%d",&hin);
+	printf("Science : ");
+	scanf("%d",&snc);
+	printf("Social Science : ");
+	scanf("%d",&ssc);
+	
+	
+	totalMarks=maths+eng+hin+snc+ssc;
+	
+	if(totalMarks>500||totalMarks<=0){
+		printf("\n\n\tINVALID INPUT..");
+		exit(0);
+	}
+    if(totalMarks>=450&&totalMarks<=500){
+		grade = 'A';
+	}
+	 else if(totalMarks>=400&&totalMarks<=449){
+			grade = 'B';
+		}
+	    else if(totalMarks>=350&&totalMarks<=399){
+			grade = 'C';
+		}
+	     else if(totalMarks>=300&&totalMarks<=349){
+			grade = 'D';
+		}
+	    else if(totalMarks>=200&&totalMarks<=299){
+			grade = 'E';
+		}
+	    else{
+			grade = 'F';
+		}
+    printf("Total marks secured : %d\n",totalMarks);
+    printf("Grade : %c",grade);
+	return 0;
+}
